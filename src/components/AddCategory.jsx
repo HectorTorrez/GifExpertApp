@@ -22,6 +22,11 @@ export const AddCategory = ({ onNewCategory  }) => {
         <form onSubmit={ (event) => onSubmit(event) }>
             <input type='text' placeholder="Buscar Gifs" value={ inputValue }
             onChange={ onInputChange }/>
+            <button className="btn-submit" type="submit">
+                <div className="div-img">
+                 <img src="https://giphy.com/static/img/search-icon.svg" />
+                </div>
+            </button>
 
         </form>
         

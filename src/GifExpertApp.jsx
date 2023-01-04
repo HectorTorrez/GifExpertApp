@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory, GifGrid } from "./components";
+import { Navbar } from "./components/Navbar";
 
 export const GifExpertApp = () => {
 
@@ -25,16 +26,16 @@ export const GifExpertApp = () => {
     console.log(categories)
     
   return (
-    <>
-        <button className="btn btn-danger" onClick={ onDeleteCategory }>Delete</button>
-        <h1>GifExpertApp</h1>
+    <div className="container">
+        <Navbar/>
         <AddCategory 
         onNewCategory = { onAddCategory }
         />
+        <button className="btn-reset" onClick={ onDeleteCategory }>Reset</button>
         <ol>
             {categories.map( category => 
                 <>
-                <button onClick={()=> handleOnRemove(category)}>Delete</button>
+                <button className="btn-delete" onClick={()=> handleOnRemove(category)}>Delete</button>
                 <GifGrid
                  key={ category }
                  category = { category }   
@@ -44,6 +45,8 @@ export const GifExpertApp = () => {
             )}
 
         </ol>
-    </>
+
+        
+    </div>
   )
 }
